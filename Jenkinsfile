@@ -7,7 +7,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t BhimKumar/flaskapp:$BUILD_NUMBER .'
+                sh 'docker build -t bhimkumar/flaskapp:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push BhimKumar/flaskapp:$BUILD_NUMBER'
+                sh 'docker push bhimkumar/flaskapp:$BUILD_NUMBER'
             }
         }
 }
